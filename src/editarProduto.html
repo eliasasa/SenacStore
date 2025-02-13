@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SenacStore - Editar Produtos</title>
+</head>
+<body>
+    <h1>Editar Produtos</h1>
+    <div id="editar-produtos">
+        <form id="form-editar-produto">
+            <label for="acao">Escolha uma ação:</label>
+            <select id="acao" name="acao">
+                <option value="adicionar">Adicionar Produto</option>
+                <option value="atualizar">Atualizar Produto</option>
+                <option value="deletar">Deletar Produto</option>
+            </select>
+
+            <div id="campo-id" style="display: none;">
+                <label for="id-produto">ID do Produto:</label>
+                <input type="number" id="id-produto" name="id-produto">
+            </div>
+
+            <div id="campos-produto">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo">
+
+                <label for="preco">Preço:</label>
+                <input type="number" id="preco" name="preco">
+
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao"></textarea>
+
+                <label for="categoria">Categoria:</label>
+                <select id="categoria" name="categoria">
+                    <option value="electronics">Eletrônicos</option>
+                    <option value="jewelery">Joias</option>
+                    <option value="men's clothing">Roupas Masculinas</option>
+                    <option value="women's clothing">Roupas Femininas</option>
+                </select>
+
+                <label for="imagem">URL da Imagem:</label>
+                <input type="url" id="imagem" name="imagem">
+            </div>
+
+            <button type="submit">Confirmar</button>
+        </form>
+
+        <div id="mensagem"></div>
+    </div>
+
+    <script src="../src/js/editarProduto.js"></script>
+</body>
+</html>
