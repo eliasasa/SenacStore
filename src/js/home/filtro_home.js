@@ -1,6 +1,6 @@
-const renderizarFiltro = (categorias) => {
+const criar_filtro = (categorias) => {
     return `
-        <div id="filtroProdutos">    
+        <div id="filtro_produtos">    
             <select>
                 <option value="">Todas as categorias</option>
                 ${categorias.map(categoria => `<option value="${categoria}">${categoria}</option>`).join("")}
@@ -9,4 +9,4 @@ const renderizarFiltro = (categorias) => {
     `;
 };
 
-export default renderizarFiltro;
+export default criar_filtro;
