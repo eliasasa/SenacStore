@@ -5,15 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/components/header.css">
     <title>Senac Store</title>
 </head>
 
 <body>
-    <iframe src="./header.html" style="border: none; width: 100%; height: 100px;"></iframe>
+    <main>
+        <nav>
+            <iframe src="./components/header.html" style="width: 100%; height: 100%;"></iframe>
+        </nav>
 
+        <div id="home_grid">
+            <div id="filtro_produtos"></div>
+            <div id="produtos_container"></div>
+        </div>
+    
+    </main>
 
-    <div id="app"></div>
-    <script type="module" src="./js/script.js"></script>
+    <script type="module" src="./js/home/script.js"></script>
+
 </body>
 </html>
