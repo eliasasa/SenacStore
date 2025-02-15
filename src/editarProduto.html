@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SenacStore - Editar Produtos</title>
+    <link rel="stylesheet" href="../styles/editarProduto.css">
 </head>
 <body>
     <h1>Editar Produtos</h1>
@@ -45,10 +46,13 @@
 
             <button type="submit">Confirmar</button>
         </form>
-
-        <div id="mensagem"></div>
     </div>
-
+    <div id="popup-overlay" class="popup-overlay" style="display: none;"></div>
+    <div id="popup" class="popup" style="display: none;">
+        <h2 id="popup-title"></h2>
+        <div id="popup-content"></div>
+        <button class="btn-fechar" onclick="fecharPopup()">Fechar</button>
+    </div>
     <script src="../src/js/editarProduto.js"></script>
 </body>
 </html>
