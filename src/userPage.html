@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/userPage.css">
+</head>
+<body>
+    <div class="perfil_container">
+        <div class="user_perfil">
+            <div class="navPic_user">
+                <img src="https://i.pravatar.cc/300">
+                <div class="editar_but">
+                    <button>Editar</button>
+                </div>
+            </div>
+            <div class="user_info">
+                <div class="name&username">
+                    <h2 id="name">Nome</h2>
+                    <h3 id="username">Username</h3>
+                </div>
+                <div class="contact_info">
+                    <h3 id="userEmail">e-mail</h3>
+                    <h3 id="userPhone">phone</h3>
+                </div>
+                <div class="adress_info">
+                    <h3 id="userCity">cidade</h3>
+                    <h3 id="userStreet">rua</h3>
+                    <h3 id="userPhoneNum">numero</h3>
+                    <h3 id="userCEP">cep</h3>
+                    <div class="geolocal_info">
+                        <h3 id="firstGeo">123</h3>
+                        <h3 id="lastGeo">456</h3>
+                    </div>
+                <button onclick="getUserInfo(1)">teste</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../src/js/userPage.js"></script>
+</html>
