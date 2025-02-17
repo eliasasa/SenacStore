@@ -13,7 +13,7 @@ const componente_produto = ({ title, image, price, id }) => {
             <div class="botao_container"> 
                 <a href="./produto.html?produto=${id}" class="link_produto">
                     <button class="btn_comprar" onclick="add_comprar(${id})">
-                        <img src="../../media/img/home/carrinho.png" alt="#img_botoes">
+                        <img src="../media/img/home/carrinho.png" alt="#img_botoes">
                         <h2>Comprar</h2>
                     </button>
                 </a>

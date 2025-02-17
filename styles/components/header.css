@@ -17,15 +17,15 @@ iframe {
     width: 100vw;
     height: 50px;
     align-items: center;
-    background-color: #333;
+    background-color: #0D1117; 
     padding: 10px 20px;
-    color: white;
+    color: #E6EDF3;
 }
 
 .logo a {
     text-decoration: none;
     font-size: 24px;
-    color: white;
+    color: #E6EDF3;
     font-weight: bold;
 }
 
@@ -37,28 +37,28 @@ iframe {
 
 .nav_menu a {
     text-decoration: none;
-    color: white;
+    color: #E6EDF3;
     font-size: 16px;
     padding: 5px 10px;
     transition: background-color 0.3s;
 }
 
 .nav_menu a:hover {
-    background-color: #555;
+    background-color: #FF914D; 
     border-radius: 5px;
 }
 
 .carrinho_header a {
     text-decoration: none;
-    color: white;
+    color: #E6EDF3;
     font-size: 16px;
     padding: 5px 10px;
-    background-color: #ff6f61;
+    background-color: #FF6B35; 
     border-radius: 5px;
 }
 
 .carrinho_header a:hover {
-    background-color: #e55b51;
+    background-color: #FFB088; 
 }
 
 @media (max-width: 900px) {
@@ -69,9 +69,9 @@ iframe {
         width: 100vw;
         height: 100px;
         align-items: center;
-        background-color: #333;
+        background-color: #0D1117; 
         padding: 10px 20px;
-        color: white;
+        color: #E6EDF3; 
     }
 
     .carrinho_header {
@@ -93,9 +93,9 @@ iframe {
         width: 100vw;
         height: 150px;
         align-items: center;
-        background-color: #333;
+        background-color: #0D1117; /* cor-fundo-1 */
         padding: 10px 20px;
-        color: white;
+        color: #E6EDF3;
     }
 
     .carrinho_header {
