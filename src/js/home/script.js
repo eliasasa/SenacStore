@@ -34,7 +34,6 @@ async function buscar_categorias() {
             await buscar_produtos(event.target.value);
         });
         
-
         buscar_produtos();
 
     } catch (error) {
