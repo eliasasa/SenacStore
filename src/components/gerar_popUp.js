@@ -52,9 +52,12 @@ export function mostrarPopup(acao, dados) {
 }
 
 export function fecharPopup() {
+
     document.getElementById('popup-overlay').style.display = 'none';
     document.getElementById('popup').style.display = 'none';
     setTimeout(() => {
         document.getElementById('popup-content').innerHTML = '';
     }, 300);
 }
+document.getElementById('popup-overlay').addEventListener('click', fecharPopup);
+document.getElementById('btn-fechar-popup').addEventListener('click', fecharPopup);
