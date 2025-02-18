@@ -55,7 +55,9 @@ function enviarLogin(event){
         alert('preencha todos os campos.')
     }
 }
-document.getElementById('Login').innerHTML = formLogin();
+
+const conteudo = document.addEventListener('DOMContentLoaded', formLogin());
+document.getElementsByClassName('login-container').innerHTML = conteudo;
 
 document.addEventListener('submit',enviarLogin);
 
