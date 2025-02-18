@@ -43,6 +43,7 @@
 /* Popup */
 
 .popup-overlay {
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,6 +57,7 @@
 }
 
 .popup {
+    z-index: 1001;
     background: var(--cor-fundo-2);
     border: 1px solid var(--cor-borda);
     border-radius: 5px;

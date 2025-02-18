@@ -9,6 +9,7 @@ function gerarPopUp() {
     `;
 }
 
+
 export function mostrarPopup(acao, dados) {
     if (!document.getElementById('popup')) {
         const divContainer = document.createElement('div');
