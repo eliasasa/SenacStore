@@ -1,4 +1,23 @@
+function gerarPopUp() {
+    return `
+    <div id="popup-overlay" class="popup-overlay" style="display: none;"></div>
+    <div id="popup" class="popup" style="display: none;">
+        <h2 id="popup-title"></h2>
+        <div id="popup-content"></div>
+        <button class="btn-fechar" id="btn-fechar-popup">Fechar</button>
+    </div>
+    `;
+}
+
 export function mostrarPopup(acao, dados) {
+    if (!document.getElementById('popup')) {
+        const divContainer = document.createElement('div');
+        divContainer.innerHTML = gerarPopUp();
+        document.body.appendChild(divContainer);
+        document.getElementById('popup-overlay').addEventListener('click', fecharPopup);
+        document.getElementById('btn-fechar-popup').addEventListener('click', fecharPopup);
+    }
+
     const popupTitle = document.getElementById('popup-title');
     const popupContent = document.getElementById('popup-content');
     let conteudoHtml = '';
@@ -52,12 +71,9 @@ export function mostrarPopup(acao, dados) {
 }
 
 export function fecharPopup() {
-
     document.getElementById('popup-overlay').style.display = 'none';
     document.getElementById('popup').style.display = 'none';
     setTimeout(() => {
         document.getElementById('popup-content').innerHTML = '';
     }, 300);
 }
-document.getElementById('popup-overlay').addEventListener('click', fecharPopup);
-document.getElementById('btn-fechar-popup').addEventListener('click', fecharPopup);
