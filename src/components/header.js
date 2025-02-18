@@ -14,7 +14,7 @@ const header_content_js = () => {
                         <li><a href="#">Ofertas</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Ajuda</a></li>
-                    </ul>
+                    </ul> 
                 </nav>
 
                 <div class="carrinho_header">

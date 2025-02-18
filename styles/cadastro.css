@@ -1,0 +1,96 @@
+@import url('../styles/root.css');
+
+#cadastro_container {
+    background: var(--cor-fundo-2);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem auto;
+    width: 90%;
+    height: 802px;
+    width: 800px;
+    box-shadow: var(--sombra-1);
+}
+
+#cadastro_content {
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+#titulo_cadastro {
+    color: var(--cor-destaque-1);
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+#form_cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#form_cadastro h2 {
+    color: var(--cor-texto-1);
+}
+
+#form_cadastro input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#form_cadastro input:focus {
+    border-color: var(--cor-destaque-1);
+    box-shadow: 0 0 5px var(--cor-destaque-1);
+}
+
+#form_cadastro button {
+    background-color: var(--cor-destaque-1);
+    color: #fff;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#form_cadastro button:hover {
+    background-color: var(--cor-destaque-2);
+    transform: translateY(-2px);
+}
+
+#popUp {
+    width: 300px;
+    height: 200px;
+    background-color: var(--cor-destaque-2);
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    #form_cadastro input {
+        font-size: 0.9rem;
+    }
+
+    #form_cadastro button {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #form_cadastro input {
+        padding: 0.7rem;
+    }
+
+    #form_cadastro button {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+}

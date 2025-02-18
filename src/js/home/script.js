@@ -1,6 +1,10 @@
 import componente_produto from "./produto_home.js";
 import criar_filtro from "./filtro_home.js";
 
+// if(!sessionStorage.getItem('userToken')){
+//     window.location.href = 'login.html';
+// }
+
 async function buscar_produtos(categoria = "") {
     let url;
     if (categoria) {
