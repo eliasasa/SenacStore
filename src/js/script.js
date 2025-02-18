@@ -1,5 +1,6 @@
 import componenteProduto from "../components/produto_home.js";
 import renderizarFiltro from "../components/filtro_home.js";
+import { pegarProdutoPorId } from "../scripts/produto.js";
 
 // if(!sessionStorage.getItem('userToken')){
 //     window.location.href = './login.html';
