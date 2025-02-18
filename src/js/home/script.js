@@ -39,4 +39,3 @@ async function buscar_categorias() {
 }
 
 buscar_categorias();
-

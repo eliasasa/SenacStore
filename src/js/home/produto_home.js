@@ -7,8 +7,10 @@ const componente_produto = ({ title, image, price, id }) => {
             <hr>
             <div class="info_produto">
                 <h2>${title}</h2>
-                <p class="preco_produto">R$ ${price}</p>
             </div>
+            <div class="info_preco">
+                <p class="preco_produto">R$ ${price}</p>
+            </div> 
             <hr>
             <div class="botao_container"> 
                 <a href="./produto.html?produto=${id}" class="link_produto">
