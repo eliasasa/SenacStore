@@ -1,12 +1,11 @@
 @import url('./root.css');
 
 body {
-    background-color: var(--cor-fundo-1);
+    background-color: var(--cor-fundo-3);
     color: var(--cor-texto-1);
     font-family: 'Segoe UI', system-ui, sans-serif;
     line-height: 1.5;
     transition: var(--transicao-normal);
-    padding: 2% 2%;
     margin: 0;
     min-height: 100%;
     display: grid;
