@@ -1,4 +1,4 @@
-const criar_filtro = (categorias) => {
+export function criar_filtro (categorias) {
     return `
         <div id="filtro_produtos">    
             <select>
@@ -8,5 +8,3 @@ const criar_filtro = (categorias) => {
         </div>
     `;
 };
-
-export default criar_filtro;
