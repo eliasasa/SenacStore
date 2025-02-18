@@ -13,8 +13,6 @@ const camposProduto = document.getElementById('campos-produto');
 
 acaoSelect.addEventListener('change', atualizarDiv);
 form.addEventListener('submit', realizarEdit);
-document.getElementById('popup-overlay').addEventListener('click', fecharPopup);
-document.getElementById('btn-fechar-popup').addEventListener('click', fecharPopup);
 
 function atualizarDiv(event) {
     event.preventDefault(false);
