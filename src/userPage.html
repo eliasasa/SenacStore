@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../styles/userPage.css">
 </head>
 <body>
+    <iframe src="./header.html" style="border: none; width: 100%; height: 100px;"></iframe>
     <div class="perfil_container">
         <div class="user_perfil">
             <div class="navPic_user">
@@ -16,28 +17,43 @@
                 </div>
             </div>
             <div class="user_info">
-                <div class="name&username">
+                <div class="name_username">
                     <h2 id="name">Nome</h2>
                     <h3 id="username">Username</h3>
                 </div>
                 <div class="contact_info">
+                    <h3>E-mail:</h3>
                     <h3 id="userEmail">e-mail</h3>
+                    <h3>Telefone:</h3>
                     <h3 id="userPhone">phone</h3>
                 </div>
+                <h2>Endereço:</h2>
                 <div class="adress_info">
+                    <h3>Cidade:</h3>
                     <h3 id="userCity">cidade</h3>
+                    <h3>Rua:</h3>
                     <h3 id="userStreet">rua</h3>
+                    <h3>Nº:</h3>
                     <h3 id="userPhoneNum">numero</h3>
+                    <h3>Caixa-Postal:</h3>
                     <h3 id="userCEP">cep</h3>
+                    <h3>Geo-localização:</h3>
                     <div class="geolocal_info">
                         <h3 id="firstGeo">123</h3>
                         <h3 id="lastGeo">456</h3>
                     </div>
-                <button onclick="getUserInfo(1)">teste</button>
+                <input id="idUser" type="number">
+                <button type="button" id="teste">Teste</button>
                 </div>
             </div>
         </div>
     </div>
+    <div id="popup-overlay" class="popup-overlay" style="display: none;"></div>
+    <div id="popup" class="popup" style="display: none;">
+        <h2 id="popup-title"></h2>
+        <div id="popup-content"></div>
+        <button class="btn-fechar" id="btn-fechar-popup">Fechar</button>
+    </div>
+    <script src="../src/js/userPage.js" type="module"></script>
 </body>
-<script src="../src/js/userPage.js"></script>
 </html>
