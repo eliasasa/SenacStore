@@ -1,0 +1,164 @@
+@import url('./root.css');
+@import url('../styles/components/popUp.css');
+
+body {
+    background-color: var(--cor-fundo-3);
+    color: var(--cor-texto-1);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.5;
+    transition: var(--transicao-normal);
+    margin: 0;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 2%;
+    overflow-x: hidden;
+
+    & h1 {
+        color: var(--cor-destaque-1);
+        font-weight: 600;
+        text-shadow: var(--sombra-1);
+        position: relative;
+        padding-bottom: 1%;
+        margin: 0;
+        font-size: 8fr;
+        text-align: center;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20%;
+            max-width: 100px;
+            height: 2px;
+            background: var(--cor-destaque-2);
+            transition: var(--transicao-rapida);
+        }
+    }
+}
+
+#editar-produtos {
+    background: var(--cor-fundo-2);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 5%;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 640px;
+    box-shadow: var(--sombra-1);
+    transition: var(--transicao-normal);
+    box-sizing: border-box;
+    position: relative;
+
+    & form {
+        display: flex;
+        gap: 2%;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    & label {
+        color: var(--cor-texto-2);
+        font-weight: 500;
+        display: block;
+        margin-bottom: 1%;
+        transition: var(--transicao-rapida);
+    }
+
+    & input, & select, & textarea {
+        background: var(--cor-fundo-3);
+        border: 1px solid var(--cor-borda);
+        color: var(--cor-texto-1);
+        padding: 3% 6%;
+        border-radius: 5px;
+        transition: var(--transicao-rapida);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 8px;
+
+        &:focus {
+            border-color: var(--cor-destaque-2);
+            box-shadow: 0 0 0 3% rgba(255,107,53,0.15);
+        }
+
+        &:hover {
+            border-color: var(--cor-texto-3);
+        }
+    }
+
+    & textarea {
+        resize: vertical;
+        min-height: 30%;
+    }
+
+    & button[type="submit"] {
+        background: linear-gradient(
+            135deg,
+            var(--cor-destaque-1) 0%,
+            var(--cor-destaque-2) 100%
+        );
+        color: white;
+        padding: 4% 10%;
+        border: none;
+        border-radius: 5px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transicao-rapida);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        width: 100%;
+        max-width: 100%;
+        margin: 4% 0% 0%;
+
+        &:hover {
+            opacity: 0.9;
+            transform: translateY(-1%);
+            box-shadow: var(--sombra-2);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    #editar-produtos {
+        padding: 5% 3%;
+        width: 94%;
+
+        & button[type="submit"] {
+            padding: 6% 10%;
+            font-size: 90%;
+        }
+    }
+
+    .popup {
+        padding: 5% 3%;
+        width: 94%;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+    body {
+        padding: 4% 5%;
+    }
+    
+    #editar-produtos {
+        padding: 3%;
+        max-width: 90vw;
+    }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
