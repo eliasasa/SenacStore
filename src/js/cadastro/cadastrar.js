@@ -18,6 +18,7 @@ const cadastro_content_js = () => {
                 <button type="submit">Cadastrar</button>
             </form>
         </div>
+        
         <div id="popUp" style="display: none;">
             <h2>Usuário ou senha já existem!</h2>
             <button id="closePopUp">Fechar</button>
@@ -26,31 +27,3 @@ const cadastro_content_js = () => {
 };
 
 document.getElementById('cadastro_container').innerHTML = cadastro_content_js();
-
-document.getElementById('form_cadastro').addEventListener('submit', function (error) {
-    error.preventDefault(); 
-
-    const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value;
-    const confirma_senha = document.getElementById('confirma_senha').value;
-    
-    const usuariosExistentes = ['1', '2'];  
-    const senhasExistentes = ['123', '456']; 
-    
-    if (usuariosExistentes.includes(nome) || senhasExistentes.includes(senha)) {
-        document.getElementById('popUp').style.display = 'block';
-
-    } else if (senha !== confirma_senha) {
-        alert('As senhas não coincidem!');
-
-    } else {
-        alert('Cadastro realizado com sucesso!');
-    }
-});
-
-document.getElementById('closePopUp').addEventListener('click', function () {
-    document.getElementById('popUp').style.display = 'none';
-});
-
-export default cadastro_content_js;
