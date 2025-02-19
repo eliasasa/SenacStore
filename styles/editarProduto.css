@@ -1,17 +1,18 @@
 @import url('./root.css');
+@import url('../styles/components/popUp.css');
 
 body {
-    background-color: var(--cor-fundo-1);
+    background-color: var(--cor-fundo-3);
     color: var(--cor-texto-1);
     font-family: 'Segoe UI', system-ui, sans-serif;
     line-height: 1.5;
     transition: var(--transicao-normal);
-    padding: 2% 2%;
     margin: 0;
     min-height: 100%;
     display: grid;
     grid-template-rows: auto 1fr;
     gap: 2%;
+    overflow-x: hidden;
 
     & h1 {
         color: var(--cor-destaque-1);
@@ -19,7 +20,7 @@ body {
         text-shadow: var(--sombra-1);
         position: relative;
         padding-bottom: 1%;
-        margin: 0 0 3%;
+        margin: 0;
         font-size: 8fr;
         text-align: center;
 
@@ -124,7 +125,6 @@ body {
     }
 }
 
-
 @media (max-width: 480px) {
     #editar-produtos {
         padding: 5% 3%;
@@ -162,4 +162,3 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
-

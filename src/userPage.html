@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/png" sizes="16x16"  href="../media/img/Logofavicon.jpeg">
+    <title>SenacStore - Seu perfil</title>
+    <link rel="stylesheet" href="../styles/components/header.css">
     <link rel="stylesheet" href="../styles/userPage.css">
 </head>
 <body>
-    <iframe src="./header.html" style="border: none; width: 100%; height: 100px;"></iframe>
+    <nav>
+        <div id="header_container"></div>
+    </nav>
+    <div class="background_img">
+        <img src="../media/img/home/background_UserPage.jpg" alt="Background">
+    </div>
     <div class="perfil_container">
         <div class="user_perfil">
             <div class="navPic_user">
@@ -16,44 +23,10 @@
                     <button>Editar</button>
                 </div>
             </div>
-            <div class="user_info">
-                <div class="name_username">
-                    <h2 id="name">Nome</h2>
-                    <h3 id="username">Username</h3>
-                </div>
-                <div class="contact_info">
-                    <h3>E-mail:</h3>
-                    <h3 id="userEmail">e-mail</h3>
-                    <h3>Telefone:</h3>
-                    <h3 id="userPhone">phone</h3>
-                </div>
-                <h2>Endereço:</h2>
-                <div class="adress_info">
-                    <h3>Cidade:</h3>
-                    <h3 id="userCity">cidade</h3>
-                    <h3>Rua:</h3>
-                    <h3 id="userStreet">rua</h3>
-                    <h3>Nº:</h3>
-                    <h3 id="userPhoneNum">numero</h3>
-                    <h3>Caixa-Postal:</h3>
-                    <h3 id="userCEP">cep</h3>
-                    <h3>Geo-localização:</h3>
-                    <div class="geolocal_info">
-                        <h3 id="firstGeo">123</h3>
-                        <h3 id="lastGeo">456</h3>
-                    </div>
-                <input id="idUser" type="number">
-                <button type="button" id="teste">Teste</button>
-                </div>
-            </div>
+            <div class="user_info" id="user_info"></div>
         </div>
     </div>
-    <div id="popup-overlay" class="popup-overlay" style="display: none;"></div>
-    <div id="popup" class="popup" style="display: none;">
-        <h2 id="popup-title"></h2>
-        <div id="popup-content"></div>
-        <button class="btn-fechar" id="btn-fechar-popup">Fechar</button>
-    </div>
+    <script type="module" src="../src/components/header.js"></script>
     <script src="../src/js/userPage.js" type="module"></script>
 </body>
 </html>
