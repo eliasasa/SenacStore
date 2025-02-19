@@ -4,6 +4,8 @@ import { renderUserInfo } from '../components/renderUser.js';
 
 let currentUserData = null;
 let userName = null;
+let userEmail = null;
+let userUsername = null;
 
 function abrirEdicao() {
     mostrarPopup('editarUsuario', currentUserData);
@@ -36,7 +38,9 @@ async function handleSalvarAlteracoes() {
 
         const updatedData = {
             phone: editPhone.value,
+            username: userUsername,
             name: userName,
+            email: userEmail,
             address: {
                 city: editCity.value,
                 street: editStreet.value,
@@ -64,7 +68,9 @@ async function handleSalvarAlteracoes() {
         
         dadosAtualizados.id = currentUserData.id;
         currentUserData = dadosAtualizados;
+        userEmail = dadosAtualizados.email;
         userName = dadosAtualizados.name;
+        userUsername = dadosAtualizados.username;
 
         renderUserInfo(document.getElementById('user_info'), currentUserData);
 
@@ -106,7 +112,9 @@ async function userInfo(event) {
         const resposta = await getInfoUser(id);
         if (resposta) {
             currentUserData = resposta;
+            userEmail = resposta.email;
             userName = resposta.name;
+            userUsername = resposta.username;
             renderUserInfo(document.getElementById('user_info'), resposta);
             document.querySelector('.editar_but button').addEventListener('click', abrirEdicao);
         }
