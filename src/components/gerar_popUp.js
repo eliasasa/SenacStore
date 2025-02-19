@@ -9,6 +9,7 @@ function gerarPopUp() {
     `;
 }
 
+
 export function mostrarPopup(acao, dados) {
     if (!document.getElementById('popup')) {
         const divContainer = document.createElement('div');
@@ -23,6 +24,55 @@ export function mostrarPopup(acao, dados) {
     let conteudoHtml = '';
 
     switch (acao) {
+        case 'editarUsuario':
+            popupTitle.textContent = 'Editar Perfil';
+            conteudoHtml = `
+                <form id="form-editar-usuario" class="popup-conteudo">
+                    <div class="input-group">
+                        <label>Telefone:</label>
+                        <input type="tel" id="edit-phone" value="${dados.phone}">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Cidade:</label>
+                        <input type="text" id="edit-city" value="${dados.address.city}">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Rua:</label>
+                        <input type="text" id="edit-street" value="${dados.address.street}">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Número:</label>
+                        <input type="number" id="edit-number" value="${dados.address.number}">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>CEP:</label>
+                        <input type="text" id="edit-zipcode" value="${dados.address.zipcode}">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Latitude:</label>
+                        <input type="text" id="edit-lat" value="${dados.address.geolocation.lat}">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Longitude:</label>
+                        <input type="text" id="edit-long" value="${dados.address.geolocation.long}">
+                    </div>
+                    
+                    <button type="button" id="btn-salvar-alteracoes">Salvar Alterações</button>
+                    <button type="button" id="btn-deletar-conta" class="btn-delete">
+                        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                        </svg>
+                        Excluir Conta
+                    </button>
+                </form>
+            `;
+            break;
         case 'adicionar':
             popupTitle.textContent = 'Produto Adicionado';
             conteudoHtml = `
@@ -62,6 +112,26 @@ export function mostrarPopup(acao, dados) {
         case 'erro':
             popupTitle.textContent = 'Erro';
             conteudoHtml = `<div class="popup-conteudo"><p>${dados}</p></div>`;
+            break;
+            
+        case 'sucesso':
+            popupTitle.textContent = 'Alterações Salvas!';
+            conteudoHtml = `
+                <div class="popup-conteudo">
+                    <div class="popup-mensagem">
+                        <svg viewBox="0 0 24 24" width="64" height="64" fill="#4CAF50">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        <h3>Dados atualizados com sucesso!</h3>
+                        <div class="dados-atualizados">
+                            <p><strong>Telefone:</strong> ${dados.phone}</p>
+                            <p><strong>Cidade:</strong> ${dados.address.city}</p>
+                            <p><strong>Endereço:</strong> ${dados.address.street}, ${dados.address.number}</p>
+                            <p><strong>CEP:</strong> ${dados.address.zipcode}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
             break;
     }
 
