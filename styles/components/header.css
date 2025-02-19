@@ -18,10 +18,10 @@
     grid-template-columns: repeat(3, auto);
     justify-content: space-between;
     width: 100vw;
-    height: 50px;
+    height: min-content;
     align-items: center;
-    background-color: var(--cor-fundo-2); 
-    padding: 10px 30px;
+    background-color: var(--cor-fundo-2);
+    padding: 8px 30px;
     color: var(--cor-texto-1);
 }
 

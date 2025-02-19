@@ -54,6 +54,7 @@
       transition: var(--transicao-rapida);
       display: flex;
       justify-content: center;
+      margin-top: 1rem;
       
       &:hover {
         cursor: pointer;
