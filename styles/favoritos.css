@@ -1,4 +1,10 @@
-.imagem-produto img {
-    width: 20%;
+.imagem-produto{
+    width: 50%;
     border-radius: 5px;
+}
+
+
+.produto-div{
+    width: 300px;
+    background-color: grey;
 }

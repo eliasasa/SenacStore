@@ -17,6 +17,10 @@ import {criar_filtro} from "./filtro_home.js";
 // crtl + D seleciona a palavra
 const ids = [1, 2, 3, 4, 5];
 
+window.onload = () => {
+  fetchProdutos();
+}
+
 async function fetchProdutos() {
   for (let id of ids) {
     try {
@@ -39,7 +43,7 @@ async function fetchProdutos() {
   }
 }
 
-fetchProdutos();
+
 
 
 
