@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../styles/cadastro.css">
+</head>
+<body>
+    <nav>
+        <div id="header_container"></div>
+    </nav>
+    <div class="bg_video">
+        <video src="../media/backgroundVideo.mp4" autoplay loop muted></video>
+    </div>
+    <div class="cadastro_container">
+        <h1>Cadastro</h1>
+        <div class="form-cadastro">
+            <form id="cadastroForm">
+                <label for="primeiroNome">Primeiro Nome:</label>
+                <input type="text" id="primeiroNome" name="primeiroNome" required>
+
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" id="sobrenome" name="sobrenome" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="username">Nome de Usuário:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" required>
+
+                <label for="rua">Rua:</label>
+                <input type="text" id="rua" name="rua" required>
+
+                <label for="numero">Número:</label>
+                <input type="number" id="numero" name="numero" required>
+
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" required>
+
+                <label for="latitude">Latitude:</label>
+                <input type="text" id="latitude" name="latitude" required>
+
+                <label for="longitude">Longitude:</label>
+                <input type="text" id="longitude" name="longitude" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+            <br>
+            <a href="login.html" class="botao-login">Já tem uma conta? <span class="sublinhado">Logar</span></a>
+        </div>
+    </div>
+    </body>
+<script type="module" src="../src/components/header.js"></script>
+<script type="module" src="../src/js/cadastro.js"></script>
+</html>

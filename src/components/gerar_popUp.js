@@ -9,7 +9,6 @@ function gerarPopUp() {
     `;
 }
 
-
 export function mostrarPopup(acao, dados) {
     if (!document.getElementById('popup')) {
         const divContainer = document.createElement('div');
@@ -73,6 +72,7 @@ export function mostrarPopup(acao, dados) {
                 </form>
             `;
             break;
+
         case 'adicionar':
             popupTitle.textContent = 'Produto Adicionado';
             conteudoHtml = `
@@ -133,8 +133,19 @@ export function mostrarPopup(acao, dados) {
                 </div>
             `;
             break;
+            
+        case 'cadastroSucesso':
+            popupTitle.textContent = 'Cadastro Concluído!';
+            conteudoHtml = `
+                <div class="popup-conteudo">
+                    <h3>Usuário cadastrado com sucesso!</h3>
+                    <p>ID do usuário: ${dados}</p>
+                </div>
+            `;
+            break;
     }
-
+    
+    window.scrollTo(0, 0);
     popupContent.innerHTML = conteudoHtml;
     document.getElementById('popup-overlay').style.display = 'block';
     document.getElementById('popup').style.display = 'block';
