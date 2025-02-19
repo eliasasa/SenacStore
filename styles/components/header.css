@@ -1,3 +1,5 @@
+@import url('../root.css');
+
 * {
     margin: 0;
     padding: 0;
@@ -18,13 +20,28 @@
     width: 100vw;
     height: 50px;
     align-items: center;
-    background-color: #0D1117; 
+    background-color: var(--cor-fundo-2); 
     padding: 10px 30px;
-    color: #E6EDF3;
+    color: var(--cor-texto-1);
 }
 
 .info_preco {
     height: 25px;
+}
+
+.carrinho_header {
+    display: flex;
+    svg {
+        width: 16px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+
+.logo {
+    display: flex;
+    gap: 0.5rem;
 }
 
 .logo a {
@@ -41,6 +58,7 @@
 }
 
 .nav_menu a {
+    border-radius: 5px;
     text-decoration: none;
     color: #E6EDF3;
     font-size: 16px;
@@ -60,6 +78,8 @@
     padding: 5px 10px;
     background-color: #FF6B35; 
     border-radius: 5px;
+    display: flex;
+    gap: 0.5rem;
 }
 
 .carrinho_header a:hover {
