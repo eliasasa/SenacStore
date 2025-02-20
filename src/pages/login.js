@@ -70,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (container) {
         container.innerHTML = formLogin();
 
-       
         const form = document.getElementById('formLogin');
         if (form) {
             form.addEventListener('submit', enviarLogin);
