@@ -2,18 +2,17 @@ const formLogin = () => {
 
     return `
         <form name="formLogin">
-            <div class="containerInput">
-                <label for="nomeUsuario">Usuario:</label>
-                <input type="text" id="nomeUsuario" name="nomeUsuario" placeholder="Usuario123">
-            </div>
-            <div class="containerInput">
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" placeholder="Senha">
-            </div>
-            <div class="ctaForm">
-                <button type="submit">Teste</button><a href="./cadastro.html">Cadastrar</a>
-            </div>
-        </form>
+           <div class="login-container">
+        <h1>login</h1>
+        <form id="formLogin">
+            <p>Nome:</p>
+            <input type="text" name="nomeUsuario" id="nomeUsuario">
+            <p>Senha:</p>
+            <input type="password" name="senha" id="senha">
+            <button type="submit">Entrar</button>
+            <a href="./cadastro.html">cadastro</a>
+        </form>    
+    </div>
     `;
 };
 

@@ -1,64 +1,79 @@
 import formLogin from "../components/formLogin.js";
 
-async function PesquisarTodosUsuarios(){
-    const usuarios = await fetch ('https://fakestoreapi.com/users')
-    .then(res=>res.json())
-    .then(json=>json)
+async function PesquisarTodosUsuarios() {
+    const usuarios = await fetch('https://fakestoreapi.com/users')
+        .then(res => res.json());
 
     return usuarios;
 }
 
-async function ValidarUsuario(usuario){
+async function ValidarUsuario(usuario) {
     const usuarios = await PesquisarTodosUsuarios();
-    const [UsuarioAutenticado] = usuarios.filter(user=>user.username === ususario);
+    const UsuarioAutenticado = usuarios.find(user => user.username === usuario);
 
-    return UsuarioAutenticado.id;
+    return UsuarioAutenticado ? UsuarioAutenticado.id : null;
 }
 
-async function SessionUsuario(token, usuario){
-    SessionStorage.clear();
-    const SetToken = SessionStorage.SetItem('UserToken', token.token);
-    const SetUser = SessionStorage.SetItem('UserId', await ValidarUsuario(usuario));
-    if(SetToken && SetUser){
+async function SessionUsuario(token, usuario) {
+    sessionStorage.clear();
+    sessionStorage.setItem('UserToken', token.token);
+    
+    const userId = await ValidarUsuario(usuario);
+    if (userId) {
+        sessionStorage.setItem('UserId', userId);
         return true;
-    }    
+    }
+    
+    return false;
 }
 
-async function fetchLogin(usuario, senha){
-    const token = await fetch('https://fakestoreapi.com/auth/login',{
+async function fetchLogin(usuario, senha) {
+    const response = await fetch('https://fakestoreapi.com/auth/login', {
         method: 'POST',
-        headers:{
-            'Content-type':'application/json'
+        headers: {
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             username: usuario,
             password: senha
         })
-    })
-    .then(res=>res.json)
-    .then(json=>json());
+    });
 
-    await SessionUsuario(token, usuario);
-    window.location.href = 'login.html';
-};
-
-function enviarLogin(event){
-    event.preventfault();
-
-    const usuario = event.target.nomeUsuario.value;
-    const senha = event.target.senha.value;
-
-    if (usuario && senha){
-        fetchLogin(usuario, senha);
+    const token = await response.json();
+    if (!token || !token.token) {
+        alert("Login falhou. Verifique seus dados.");
+        return;
     }
-    else{
-        alert('preencha todos os campos.')
+
+    const sessionCreated = await SessionUsuario(token, usuario);
+    if (sessionCreated) {
+        window.location.href = '../index.html'; 
     }
 }
 
-const conteudo = document.addEventListener('DOMContentLoaded', formLogin());
-document.getElementsByClassName('login-container').innerHTML = conteudo;
+function enviarLogin(event) {
+    event.preventDefault();
 
-document.addEventListener('submit',enviarLogin);
+    const usuario = document.getElementById('nomeUsuario').value.trim();
+    const senha = document.getElementById('senha').value.trim();
 
-// console.log(fetch('https://fakestoreapi.com/products'))
+    if (usuario && senha) {
+        fetchLogin(usuario, senha);
+    } else {
+        alert('Preencha todos os campos.');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.login-container');
+    
+    if (container) {
+        container.innerHTML = formLogin();
+
+       
+        const form = document.getElementById('formLogin');
+        if (form) {
+            form.addEventListener('submit', enviarLogin);
+        }
+    }
+});
