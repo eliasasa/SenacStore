@@ -9,10 +9,10 @@ const produtoUnicoComponente = ({ title, image, price, id, description, category
                 <span id="categoria">${category}</span>
                 <span class="preco">R$ ${price}</span>
                 <p>${description}</p>
-                
-                <a href="./carrinho.html?produto=${id}" id="addCarrinho">Adicionar ao Carrinho</a>
-                <button id="addFavorito" data-id="${id}">❤</button>
-                
+                <div>
+                    <a href="./carrinho.html?produto=${id}" id="addCarrinho">Adicionar ao Carrinho</a>
+                    <button id="addFavorito" data-id="${id}">❤</button>
+                </div>
             </div>
         </div>
     `;

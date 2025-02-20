@@ -1,5 +1,5 @@
-import componente_produto from "./produto_home.js";
-import criar_filtro from "./filtro_home.js";
+import componente_produto from "../home/produto_home.js";
+import criar_filtro from "../home/filtro_home.js";
 
 async function buscar_produtos(categoria = "") {
     let url;
