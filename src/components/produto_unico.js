@@ -1,8 +1,16 @@
 const produtoUnicoComponente = ({ title, image, price, id, description, category }) => {
+    let galeria = []
+    for (let img = 0; img <= 2; img++) {
+        galeria.push(image)
+    }
+
+    console.log(galeria)
     return `
         <div id="containerProduto">
             <div class="imgProduto">
-                <img src=${image} alt="${title}" />
+                ${galeria.map(function(foto){
+                    return `<img src=${foto} alt="${title}">`})
+                }
             </div>
             <div class="infoProduto">
                 <h1>${title}</h1>
