@@ -4,19 +4,20 @@ const header_content_js = () => {
             <div id="header_content">
                 <div class="logo">
                     <img src='../media/img/Logofavicon.jpeg' width=32px height=32px>
-                    <a href="#">Senac Store</a>
+                    <a href="../index.html">Senac Store</a>
                 </div>
 
                 <nav class="nav_menu">
                     <ul>
-                        <li><a href="../src/index.html">Produtos</a></li>
-                        <li><a href="../src/userPage.html">Editar Produtos</a></li>
+                        <li><a href="../index.html">Produtos</a></li>
+                        <li><a href="../src/editarProduto.html">Editar Produtos</a></li>
                         <li><a href="#">Favoritos</a></li>
+                        <li><a id="avaliacao-link" href="../src/avaliacao.html">Avaliação</a></li>
                     </ul>
                 </nav>
 
                 <div class="header-right">
-                    <a href="#" class="profile-link">
+                    <a href="../src/userPage.html" class="profile-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>
                         Seu Perfil
                     </a>
@@ -29,6 +30,7 @@ const header_content_js = () => {
                 </div>
             </div>
         </header>
+        <script type="module" src="../src/js/avaliacao.js"></script>
     `;
 };
 
