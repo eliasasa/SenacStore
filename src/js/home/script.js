@@ -5,10 +5,11 @@ import criar_filtro from "../home/filtro_home.js";
 //     window.location.href = 'login.html';
 // }
 
-async function buscar_produtos(categoria = "") {
+async function buscar_produtos(categoria) {
     let url;
     if (categoria) {
         url = `https://fakestoreapi.com/products/category/${categoria}`;
+        
     } else {
         url = "https://fakestoreapi.com/products/";
     }

@@ -69,6 +69,10 @@ body {
     row-gap: 20px;
 }
 
+.item_produto:hover {
+    transform: scale(1.05);
+}
+
 /* start item_produto */
 .item_produto {
     display: flex;
