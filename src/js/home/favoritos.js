@@ -1,10 +1,10 @@
 import {criar_filtro} from "./filtro_home.js";
 
-
 const ids = [1, 2, 3, 4, 5,6,7,8,9,10];
 
 window.onload = () => {
   fetchProdutos();
+  carregarCategorias();
 }
 
 async function fetchProdutos() {
@@ -32,3 +32,15 @@ async function fetchProdutos() {
   }
 }
 
+function carregarCategorias() {
+  fetch('https://fakestoreapi.com/products/categories')
+    .then(res => res.json())
+    .then(categorias => {
+      document.getElementById('filtroCategorias').innerHTML = criar_filtro(categorias);
+      
+      document.querySelector('#filtro_produtos select').addEventListener('change', (event) => {
+        const categoriaSelecionada = event.target.value;
+        exibirFavoritos(categoriaSelecionada);
+      });
+    });
+}
