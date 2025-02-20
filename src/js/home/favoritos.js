@@ -1,46 +1,47 @@
 import {criar_filtro} from "./filtro_home.js";
+import { addAoFavoritos } from '../produto.js';
 
 const ids = [1, 2, 3, 4, 5,6,7,8,9,10];
+console.log(localStorage.getItem('favoritos'))
+// window.onload = () => {
+//   fetchProdutos();
+//   carregarCategorias();
+// }
 
-window.onload = () => {
-  fetchProdutos();
-  carregarCategorias();
-}
+// async function fetchProdutos() {
+//   for (let id of ids) {
+//     try {
+//       const resposta = await fetch(`https://fakestoreapi.com/products/${id}`);
+//       const produto = await resposta.json();
+//       console.log(produto);
 
-async function fetchProdutos() {
-  for (let id of ids) {
-    try {
-      const resposta = await fetch(`https://fakestoreapi.com/products/${id}`);
-      const produto = await resposta.json();
-      console.log(produto);
-
-      const produtoDiv = `<div class='produto-div'> 
-      <img src='${produto.image}'class="imagem-produto">
-      <h2>${produto.title}</h2> <span>R$${produto.price}</span>
-      </div>`
+//       const produtoDiv = `<div class='produto-div'> 
+//       <img src='${produto.image}'class="imagem-produto">
+//       <h2>${produto.title}</h2> <span>R$${produto.price}</span>
+//       </div>`
       
     
       
-      document.getElementById('listaFavoritos').innerHTML += produtoDiv;
+//       document.getElementById('listaFavoritos').innerHTML += produtoDiv;
 
 
 
       
-    } catch (error) {
-      console.error(`Erro ${id}:`, error);
-    }
-  }
-}
+//     } catch (error) {
+//       console.error(`Erro ${id}:`, error);
+//     }
+//   }
+// }
 
-function carregarCategorias() {
-  fetch('https://fakestoreapi.com/products/categories')
-    .then(res => res.json())
-    .then(categorias => {
-      document.getElementById('filtroCategorias').innerHTML = criar_filtro(categorias);
+// function carregarCategorias() {
+//   fetch('https://fakestoreapi.com/products/categories')
+//     .then(res => res.json())
+//     .then(categorias => {
+//       document.getElementById('filtroCategorias').innerHTML = criar_filtro(categorias);
       
-      document.querySelector('#filtro_produtos select').addEventListener('change', (event) => {
-        const categoriaSelecionada = event.target.value;
-        exibirFavoritos(categoriaSelecionada);
-      });
-    });
-}
+//       document.querySelector('#filtro_produtos select').addEventListener('change', (event) => {
+//         const categoriaSelecionada = event.target.value;
+//         exibirFavoritos(categoriaSelecionada);
+//       });
+//     });
+// }
