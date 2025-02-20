@@ -47,7 +47,7 @@ async function fetchLogin(usuario, senha) {
 
     const sessionCreated = await SessionUsuario(token, usuario);
     if (sessionCreated) {
-        window.location.href = '../index.html'; 
+        window.location.href = '../src/index.html'; 
     }
 }
 

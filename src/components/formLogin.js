@@ -1,8 +1,8 @@
 const formLogin = () => {
 
     return `
-        <form name="formLogin">
-           <div class="login-container">
+        
+    <div class="login-container">
         <h1>login</h1>
         <form id="formLogin">
             <p>Nome:</p>
