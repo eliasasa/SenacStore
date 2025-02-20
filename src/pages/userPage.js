@@ -2,6 +2,18 @@ import { mostrarPopup, fecharPopup } from "../components/gerar_popUp.js";
 import { getInfoUser } from "./infoUser.js";
 import { renderUserInfo } from '../components/renderUser.js';
 
+// Função para verificar se o usuário está logado
+function verificarLogin() {
+    const token = sessionStorage.getItem('UserToken');
+    const userId = sessionStorage.getItem('UserId');
+
+    if (!token || !userId) {
+        window.location.href = '../src/login.html';
+    }
+
+    return userId;
+}
+
 let currentUserData = null;
 let userName = null;
 let userEmail = null;
@@ -104,10 +116,9 @@ async function handleDeletarConta() {
     }
 }
 
-
 async function userInfo(event) {
     event.preventDefault();
-    const id = 1;
+    const id = verificarLogin();
     try {
         const resposta = await getInfoUser(id);
         if (resposta) {
