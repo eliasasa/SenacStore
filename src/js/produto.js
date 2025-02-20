@@ -1,5 +1,5 @@
-import produtoUnicoComponente from '../src/components/produto_unico.js';
-import { mostrarPopup } from '../src/components/gerar_popUp.js';
+import produtoUnicoComponente from '../components/produto_unico.js';
+import { mostrarPopup } from '../components/gerar_popUp.js';
 
 function buscarProdutoPorId() {
   const produtoClicado = new URLSearchParams(document.location.search).get('produto');

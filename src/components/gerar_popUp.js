@@ -27,7 +27,7 @@ export function mostrarPopup(acao, dados) {
             popupTitle.textContent = 'Avaliação';
             conteudoHtml = `
                 <div class="popup-conteudo">
-                    <h3>O grupo está sendo atendido adequadamente?</h3>
+                    <h3>O grupo será atendido?</h3>
                     <div class="botoes-avaliacao">
                         <button id="btn-sim" class="btn-avaliacao sim">Sim</button>
                         <button id="btn-nao" class="btn-avaliacao nao">Não</button>
