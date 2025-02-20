@@ -9,7 +9,6 @@ function gerarPopUp() {
     `;
 }
 
-
 export function mostrarPopup(acao, dados) {
     if (!document.getElementById('popup')) {
         const divContainer = document.createElement('div');
@@ -24,6 +23,30 @@ export function mostrarPopup(acao, dados) {
     let conteudoHtml = '';
 
     switch (acao) {
+        case 'avaliacao':
+            popupTitle.textContent = 'Avaliação';
+            conteudoHtml = `
+                <div class="popup-conteudo">
+                    <h3>O grupo será atendido?</h3>
+                    <div class="botoes-avaliacao">
+                        <button id="btn-sim" class="btn-avaliacao sim">Sim</button>
+                        <button id="btn-nao" class="btn-avaliacao nao">Não</button>
+                    </div>
+                </div>
+            `;
+            break;
+    
+        case 'adicionarFavorito':
+            popupTitle.textContent = 'Produto Adicionado aos Favoritos';
+            conteudoHtml = `
+                <div class="popup-conteudo">
+                    <img src="${dados.image}" class="popup-imagem" alt="${dados.title}">
+                    <p><strong>Nome:</strong> ${dados.title}</p>
+                    <p><strong>Preço:</strong> R$ ${dados.price}</p>
+                </div>
+            `;
+            break;
+
         case 'editarUsuario':
             popupTitle.textContent = 'Editar Perfil';
             conteudoHtml = `
@@ -73,6 +96,7 @@ export function mostrarPopup(acao, dados) {
                 </form>
             `;
             break;
+
         case 'adicionar':
             popupTitle.textContent = 'Produto Adicionado';
             conteudoHtml = `
@@ -133,11 +157,40 @@ export function mostrarPopup(acao, dados) {
                 </div>
             `;
             break;
+            
+        case 'cadastroSucesso':
+            popupTitle.textContent = 'Cadastro Concluído!';
+            conteudoHtml = `
+                <div class="popup-conteudo">
+                    <h3>Usuário cadastrado com sucesso!</h3>
+                    <p>ID do usuário: ${dados}</p>
+                </div>
+            `;
+            break;
     }
-
+    
+    window.scrollTo(0, 0);
     popupContent.innerHTML = conteudoHtml;
     document.getElementById('popup-overlay').style.display = 'block';
     document.getElementById('popup').style.display = 'block';
+
+    if (acao === 'avaliacao') {
+        const btnSim = document.getElementById('btn-sim');
+        const btnNao = document.getElementById('btn-nao');
+
+        btnSim.addEventListener('click', () => {
+            popupContent.innerHTML = `
+                <div class="popup-conteudo">
+                    <h3>Obrigado <3!</h3>
+                </div>
+            `;
+            setTimeout(() => {
+                fecharPopup();
+            }, 2000);
+        });
+
+        moverBotaoFora('btn-nao');
+    }
 }
 
 export function fecharPopup() {
@@ -146,4 +199,45 @@ export function fecharPopup() {
     setTimeout(() => {
         document.getElementById('popup-content').innerHTML = '';
     }, 300);
+}
+
+export function moverBotaoFora(btnId) {
+    const btnNao = document.getElementById(btnId);
+
+    if (!btnNao) {
+        console.error('Botão não encontrado!');
+        return;
+    }
+
+    const moverBotao = () => {
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        const btnWidth = btnNao.offsetWidth;
+        const btnHeight = btnNao.offsetHeight;
+
+        const randomX = Math.random() * (windowWidth - btnWidth);
+        const randomY = Math.random() * (windowHeight - btnHeight);
+
+        btnNao.style.position = 'fixed';
+        btnNao.style.left = `${randomX}px`;
+        btnNao.style.top = `${randomY}px`;
+    };
+
+    const detectarProximidade = (event) => {
+        const btnRect = btnNao.getBoundingClientRect();
+        const distanciaX = Math.abs(event.clientX - (btnRect.left + btnRect.width / 2));
+        const distanciaY = Math.abs(event.clientY - (btnRect.top + btnRect.height / 2));
+        const distancia = Math.sqrt(distanciaX ** 2 + distanciaY ** 2);
+
+        const triggerDistance = 100;
+
+        if (distancia < triggerDistance) {
+            moverBotao();
+        }
+    };
+
+    document.addEventListener('mousemove', detectarProximidade);
+
+    btnNao.addEventListener('click', moverBotao);
 }

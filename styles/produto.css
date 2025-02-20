@@ -1,0 +1,141 @@
+@import url('../styles/root.css');
+@import url('../styles/components/header.css');
+@import url('../styles/components/popUp.css');
+
+#containerProduto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background: var(--cor-fundo-2);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: var(--sombra-1);
+}
+
+.imgProduto {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    border-radius: 5px;
+}
+
+.imgProduto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-height: 600px;
+}
+
+.infoProduto {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.infoProduto h1 {
+    color: var(--cor-destaque-1);
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+#categoria {
+    display: inline-block;
+    background: var(--cor-destaque-2);
+    color: var(--cor-texto-1);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+
+.preco {
+    color: var(--cor-destaque-1);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.infoProduto p {
+    color: var(--cor-texto-2);
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+#addCarrinho {
+    background: linear-gradient(135deg, var(--cor-destaque-1) 0%, var(--cor-destaque-2) 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    transition: var(--transicao-rapida);
+    width: fit-content;
+}
+
+#addCarrinho:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-2);
+}
+
+#addFavorito {
+    background: none;
+    border: none;
+    color: var(--cor-erro);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: var(--transicao-rapida);
+    position: relative;
+}
+
+#addFavorito:hover {
+    transform: scale(1.1);
+}
+
+
+@media (max-width: 768px) {
+    #containerProduto {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+
+    .infoProduto h1 {
+        font-size: 2rem;
+    }
+
+    .preco {
+        font-size: 1.8rem;
+    }
+
+    .imgProduto img {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    #containerProduto {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .infoProduto h1 {
+        font-size: 1.8rem;
+    }
+
+    .preco {
+        font-size: 1.5rem;
+    }
+
+    #addCarrinho {
+        width: 100%;
+    }
+}

@@ -54,6 +54,7 @@
       transition: var(--transicao-rapida);
       display: flex;
       justify-content: center;
+      margin-top: 1rem;
       
       &:hover {
         cursor: pointer;
@@ -62,6 +63,28 @@
       }
     }
   }
+
+  .btn-avaliacao.nao {
+    background-color: var(--cor-erro);
+    color: white;
+    transition: all 0.3s ease;
+    position: relative; 
+    cursor: pointer;
+    max-width: 320px;
+  }
+
+  .botoes-avaliacao {
+    position: relative; 
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .btn-avaliacao.sim {
+    background-color: var(--cor-sucesso);
+    color: white;
+  }
+  
   
   .popup-imagem {
     border: 1px solid var(--cor-borda);
@@ -96,5 +119,23 @@
       font-size: 1.4rem;
       margin-bottom: 0.5rem;
     }
+
+  .botoes-avaliacao {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    position: relative;
   }
+
+  .btn-avaliacao {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+
+}
   
