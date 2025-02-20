@@ -20,15 +20,28 @@ document.addEventListener('DOMContentLoaded', () => {
             const longitude = document.getElementById('longitude').value.trim();
             const telefone = document.getElementById('telefone').value.trim();
 
+            const nameRegex = /^[a-zA-Z ]+$/;
+            if (!nameRegex.test(primeiroNome)) {
+                mostrarPopUp('erro', 'Primeiro nome deve conter apenas letras e espaços.');
+                return;
+            }
+            if (!nameRegex.test(sobrenome)) {
+                mostrarPopUp('erro', 'Sobrenome deve conter apenas letras e espaços.');
+                return;
+            }        
             const cepRegex = /^\d{8}$/;
             if (!cepRegex.test(cep)) {
                 mostrarPopup('erro', 'CEP deve conter apenas números e ter 8 dígitos.');
                 return;
             }
-
             const numeroRegex = /^\d+$/;
             if (!numeroRegex.test(numero)) {
                 mostrarPopup('erro', 'Número da casa deve conter apenas números.');
+                return;
+            }
+            const telefoneRegex = /^\d{11}$/;
+            if (!telefoneRegex.test(telefone)) {
+                mostrarPopUp('erro', 'Número do telefone deve ter 9 na frente.');
                 return;
             }
 
