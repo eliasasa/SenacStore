@@ -31,7 +31,7 @@ async function buscar_categorias() {
 
         home_grid.innerHTML = criar_filtro(categorias) + '<div id=produtos_container> <div>';
 
-        document.querySelector('#filtro_produtos select').addEventListener('change', async (event) => {
+        document.querySelector('#filtro_produtos select').addEventListener('click', async (event) => {
             await buscar_produtos(event.target.value);
         });
         

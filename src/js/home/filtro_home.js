@@ -3,7 +3,7 @@ const criar_filtro = (categorias) => {
         <div id="filtro_produtos">    
             <select>
                 <option value="">Todas as categorias</option>
-                ${categorias.map(categoria => `<option value="${categoria}">${categoria}</option>`).join("")}
+                ${categorias.map(categoria => `<option value="${categoria}">${categoria}</option>`)}
             </select>
         </div>
     `;
