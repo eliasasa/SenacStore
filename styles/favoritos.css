@@ -1,0 +1,59 @@
+@import url(../styles/root.css);
+@import url(../styles/style.css);
+@import url(../styles/components/header.css);
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo-3);
+    color: var(--cor-texto-1);
+}
+
+main {
+    background: var(--cor-fundo-2);
+    border-radius: 10px;
+    box-shadow: var(--sombra-1);
+    border: 1px solid var(--cor-borda);
+}
+
+#listaFavoritos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.produto-div {
+    background: var(--cor-fundo-1);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: var(--sombra-2);
+    text-align: center;
+    width: 250px;
+    transition: var(--transicao-normal);
+    border: 1px solid var(--cor-borda);
+}
+
+.produto-div:hover {
+    transform: scale(1.05);
+}
+
+.imagem-produto {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: var(--cor-texto-1);
+}
+
+span {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--cor-destaque-1);
+}
