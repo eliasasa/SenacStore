@@ -11,7 +11,7 @@ const header_content_js = () => {
                     <ul>
                         <li><a href="../index.html">Produtos</a></li>
                         <li><a href="../src/editarProduto.html">Editar Produtos</a></li>
-                        <li><a href="#">Favoritos</a></li>
+                        <li><a href="../src/favoritos.html">Favoritos</a></li>
                         <li><a id="avaliacao-link" href="../src/avaliacao.html">Avaliação</a></li>
                     </ul>
                 </nav>

@@ -23,6 +23,8 @@ main {
     gap: 20px;
     justify-content: center;
     padding: 20px 0;
+    flex-wrap: nowrap;
+    margin: 0 1rem;
 }
 
 .produto-div {

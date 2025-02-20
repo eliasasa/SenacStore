@@ -1,16 +1,21 @@
 import formLogin from "../components/formLogin.js";
+import { mostrarPopup, fecharPopup } from "../components/gerar_popUp.js";
 
 async function PesquisarTodosUsuarios() {
-    const usuarios = await fetch('https://fakestoreapi.com/users')
-        .then(res => res.json());
-
-    return usuarios;
+    try {
+        const response = await fetch('https://fakestoreapi.com/users');
+        const usuarios = await response.json();
+        return usuarios;
+    } catch (error) {
+        console.error('Erro ao buscar usuários:', error);
+        mostrarPopup('erro', 'Erro ao buscar usuários.');
+        return [];
+    }
 }
 
 async function ValidarUsuario(usuario) {
     const usuarios = await PesquisarTodosUsuarios();
     const UsuarioAutenticado = usuarios.find(user => user.username === usuario);
-
     return UsuarioAutenticado ? UsuarioAutenticado.id : null;
 }
 
@@ -28,26 +33,37 @@ async function SessionUsuario(token, usuario) {
 }
 
 async function fetchLogin(usuario, senha) {
-    const response = await fetch('https://fakestoreapi.com/auth/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            username: usuario,
-            password: senha
-        })
-    });
+    try {
+        const response = await fetch('https://fakestoreapi.com/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: usuario,
+                password: senha
+            })
+        });
 
-    const token = await response.json();
-    if (!token || !token.token) {
-        alert("Login falhou. Verifique seus dados.");
-        return;
-    }
+        if (!response.ok) {
+            const errorText = await response.text();
+            mostrarPopup('erro', `Erro ao fazer login: ${response.status} - ${errorText}`);
+            return;
+        }
 
-    const sessionCreated = await SessionUsuario(token, usuario);
-    if (sessionCreated) {
-        window.location.href = '../index.html'; 
+        const token = await response.json();
+        if (!token || !token.token) {
+            mostrarPopup('erro', "Login falhou. Verifique seus dados.");
+            return;
+        }
+
+        const sessionCreated = await SessionUsuario(token, usuario);
+        if (sessionCreated) {
+            window.location.href = '../index.html'; 
+        }
+    } catch (error) {
+        console.error('Erro ao fazer login:', error);
+        mostrarPopup('erro', 'Erro ao fazer login. Por favor, tente novamente.');
     }
 }
 
@@ -60,7 +76,7 @@ function enviarLogin(event) {
     if (usuario && senha) {
         fetchLogin(usuario, senha);
     } else {
-        alert('Preencha todos os campos.');
+        mostrarPopup('erro', 'Preencha todos os campos.');
     }
 }
 
