@@ -3,6 +3,10 @@
     padding: 0%;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 /* start filtro_produtos */
 #home_grid {
     display: grid;
