@@ -1,23 +1,25 @@
 const header_content_js = () => {
+    const basePath = window.location.origin;
+
     return `
         <header>
             <div id="header_content">
                 <div class="logo">
-                    <img src='../media/img/Logofavicon.jpeg' width=32px height=32px>
-                    <a href="../index.html">Senac Store</a>
+                    <img src='${basePath}/media/img/Logofavicon.jpeg' width=32px height=32px>
+                    <a href="${basePath}/index.html">Senac Store</a>
                 </div>
 
                 <nav class="nav_menu">
                     <ul>
-                        <li><a href="../index.html">Produtos</a></li>
-                        <li><a href="../src/editarProduto.html">Editar Produtos</a></li>
-                        <li><a href="../src/favoritos.html">Favoritos</a></li>
-                        <li><a id="avaliacao-link" href="../src/avaliacao.html">Avaliação</a></li>
+                        <li><a href="${basePath}/index.html">Produtos</a></li>
+                        <li><a href="${basePath}/src/editarProduto.html">Editar Produtos</a></li>
+                        <li><a href="${basePath}/src/favoritos.html">Favoritos</a></li>
+                        <li><a id="avaliacao-link" href="${basePath}/src/avaliacao.html">Avaliação</a></li>
                     </ul>
                 </nav>
 
                 <div class="header-right">
-                    <a href="../src/userPage.html" class="profile-link">
+                    <a href="${basePath}/src/userPage.html" class="profile-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>
                         Seu Perfil
                     </a>
@@ -30,7 +32,7 @@ const header_content_js = () => {
                 </div>
             </div>
         </header>
-        <script type="module" src="../src/js/avaliacao.js"></script>
+        <script type="module" src="${basePath}/src/js/avaliacao.js"></script>
     `;
 };
 
