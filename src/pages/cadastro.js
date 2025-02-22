@@ -1,4 +1,4 @@
-import { mostrarPopUp } from '../components/gerar_popUp.js';
+import { mostrarPopup } from '../components/gerar_popUp.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('cadastroForm');
@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const nameRegex = /^[a-zA-Z ]+$/;
             if (!nameRegex.test(primeiroNome)) {
-                mostrarPopUp('erro', 'Primeiro nome deve conter apenas letras e espaços.');
+                mostrarPopup('erro', 'Primeiro nome deve conter apenas letras e espaços.');
                 return;
             }
             if (!nameRegex.test(sobrenome)) {
-                mostrarPopUp('erro', 'Sobrenome deve conter apenas letras e espaços.');
+                mostrarPopup('erro', 'Sobrenome deve conter apenas letras e espaços.');
                 return;
             }        
             const cepRegex = /^\d{8}$/;
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const telefoneRegex = /^\d{11}$/;
             if (!telefoneRegex.test(telefone)) {
-                mostrarPopUp('erro', 'Número do telefone deve ter 9 na frente.');
+                mostrarPopup('erro', 'Número do telefone deve ter 9 na frente.');
                 return;
             }
 
