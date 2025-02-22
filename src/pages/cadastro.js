@@ -1,4 +1,4 @@
-import { mostrarPopup } from '../components/gerar_popUp.js';
+import { mostrarPopUp } from '../components/gerar_popUp.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('cadastroForm');
