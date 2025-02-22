@@ -1,4 +1,6 @@
 const produtoUnicoComponente = ({ title, image, price, id, description, category }) => {
+    document.title = `SenacStore - ${title}`;
+
     let galeria = []
     for (let img = 0; img <= 2; img++) {
         galeria.push(image)
