@@ -5,7 +5,7 @@ const header_content_js = () => {
         <header>
             <div id="header_content">
                 <div class="logo">
-                    <img src='${basePath}/media/img/Logofavicon.jpeg' width=32px height=32px>
+                    <img src='${basePath}/media/img/Logofavicon.png' width=32px height=32px>
                     <a href="${basePath}/index.html">Senac Store</a>
                 </div>
 
